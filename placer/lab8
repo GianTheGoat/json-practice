@@ -1,1 +1,6 @@
+jq json:                             
+curl 'https://aviationweather.gov/api/data/metar?ids=KMCI&format=json&t>
+head -6 receiptTime
+
+python json:
 
