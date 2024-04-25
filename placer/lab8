@@ -4,3 +4,23 @@ head -6 receiptTime
 
 python json:
 
+#!/home/gitpod/.pyenv/shims/python3
+
+import json
+import requests
+
+with open('/workspace/json-practice/data/schacon.repos.json', 'r') as file:
+    data = json.load(file)
+
+first_five = data[:5]
+
+for item in first_five:
+    mylist = [item["name"], item["html_url"], item["updated_at"], item["visibility"]]
+    comma = " ,"
+    comma.join(mylist)
+    str_list = str(mylist)[1:-1]
+    final_list = str_list.replace("'", "")
+    print(final_list)
+
+with open("/workspace/json-practice/data/chacon.csv", 'a') as file:
+    file.write(final_list)
